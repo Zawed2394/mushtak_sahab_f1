@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of Mushtaque Ahmad Nadvi, Urdu poet and writer">
+  <meta name="keywords" content="Mushtaque Ahmad Nadvi, Urdu poetry, Hindi literature">
+  <title>Mushtaque Ahmad Nadvi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="/assets/images/center_image.jpeg">
+</head>
+<body>
+  <!-- Toolbar -->
+  <header>
+    <nav class="toolbar">
+      <h1>مشتاق احمد ندوی</h1>
+      <div class="menu">
+        <button onclick="toggleMenu()">☰ Menu</button>
+        <ul id="nav-menu">
+          <li><a href="#introduction" data-lang="en">Introduction</a><span class="urdu-text" data-lang="ur">تعارف</span></li>
+          <li><a href="#biography" data-lang="en">Biography</a><span class="urdu-text" data-lang="ur">سوانح حیات</span></li>
+          <li><a href="#published" data-lang="en">Published Books</a><span class="urdu-text" data-lang="ur">شائع شدہ کتابیں</span></li>
+          <li><a href="#unpublished" data-lang="en">Unpublished Books</a><span class="urdu-text" data-lang="ur">غیر شائع شدہ کتابیں</span></li>
+          <li><a href="#essays" data-lang="en">Essays</a><span class="urdu-text" data-lang="ur">مضامین</span></li>
+          <li><a href="#poems" data-lang="en">Poems</a><span class="urdu-text" data-lang="ur">نظمیں</span></li>
+          <li><a href="#videos" data-lang="en">Videos</a><span class="urdu-text" data-lang="ur">ویڈیوز</span></li>
+          <li><a href="#awards" data-lang="en">Awards</a><span class="urdu-text" data-lang="ur">ایوارڈز</span></li>
+          <li><a href="#contact" data-lang="en">Contact</a><span class="urdu-text" data-lang="ur">رابطہ</span></li>
+          <li><button id="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button></li>
+          <li><button id="lang-toggle" onclick="toggleLanguage()">🇵🇰 Urdu</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Image in Center -->
+  <div class="image-card">
+    <img src="/assets/images/center_image.jpeg" alt="Mushtaque Ahmad Nadvi" class="center-image">
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <section id="introduction">
+      <h2 data-lang="en">Introduction</h2>
+      <h2 class="urdu-text" data-lang="ur">تعارف</h2>
+      <p data-lang="en">Welcome to the official website of Mushtaque Ahmad Nadvi, a distinguished Urdu poet and scholar. Explore his literary contributions.</p>
+      <p class="urdu-text" data-lang="ur">مشتاق احمد ندوی کی سرکاری ویب سائٹ پر خوش آمدید، ایک ممتاز اردو شاعر اور عالم۔ ان کی ادبی شراکت کو دریافت کریں۔</p>
+    </section>
+    <section id="biography">
+      <h2 data-lang="en">Biography</h2>
+      <h2 class="urdu-text" data-lang="ur">سوانح حیات</h2>
+      <p data-lang="en">Mushtaque Ahmad Nadvi was born in [City, Year]. He earned a degree in Urdu literature from [University] and has been contributing to poetry and prose for many years.</p>
+      <p class="urdu-text" data-lang="ur">مشتاق احمد ندوی [شہر، سال] میں پیدا ہوئے۔ انہوں نے اردو ادب میں [یونیورسٹی] سے ڈگری حاصل کی اور کئی سالوں سے شاعری اور نثر میں خدمات انجام دی ہیں۔</p>
+    </section>
+    <section id="published">
+      <h2 data-lang="en">Published Books</h2>
+      <h2 class="urdu-text" data-lang="ur">شائع شدہ کتابیں</h2>
+      <div class="book">
+        <img src="https://via.placeholder.com/150" alt="Book Cover">
+        <div>
+          <h3 data-lang="en">Diwan-e-Nadvi</h3>
+          <h3 class="urdu-text" data-lang="ur">دیوان ندوی</h3>
+          <p data-lang="en">A collection of Urdu ghazals. <a href="https://example.com">Buy Now</a></p>
+          <p class="urdu-text" data-lang="ur">اردو غزلوں کا مجموعہ۔ <a href="https://example.com">ابھی خریدیں</a></p>
+        </div>
+      </div>
+    </section>
+    <section id="unpublished">
+      <h2 data-lang="en">Unpublished Books</h2>
+      <h2 class="urdu-text" data-lang="ur">غیر شائع شدہ کتابیں</h2>
+      <div class="book">
+        <h3 data-lang="en">Noor-e-Qalam (In Progress)</h3>
+        <h3 class="urdu-text" data-lang="ur">نور قلم (زیر ترقی)</h3>
+        <p data-lang="en">An upcoming collection of essays.</p>
+        <p class="urdu-text" data-lang="ur">مضامین کا ایک آئندہ مجموعہ۔</p>
+      </div>
+    </section>
+    <section id="essays">
+      <h2 data-lang="en">Essays</h2>
+      <h2 class="urdu-text" data-lang="ur">مضامین</h2>
+      <div class="content-item">
+        <h3 data-lang="en">The Evolution of Urdu Poetry</h3>
+        <h3 class="urdu-text" data-lang="ur">اردو شاعری کی ترقی</h3>
+        <p data-lang="en">An essay on Urdu poetry’s history. <a href="https://example.com">Read</a></p>
+        <p class="urdu-text" data-lang="ur">اردو شاعری کی تاریخ پر ایک مضمون۔ <a href="https://example.com">پڑھیں</a></p>
+      </div>
+    </section>
+    <section id="poems">
+      <h2 data-lang="en">Poems</h2>
+      <h2 class="urdu-text" data-lang="ur">نظمیں</h2>
+      <div class="poem">
+        <h3 data-lang="en">Journey of Love</h3>
+        <h3 class="urdu-text" data-lang="ur">محبت کا سفر</h3>
+        <p class="urdu" data-lang="ur">محبت کا سفر، دل سے دل تک<br>ہر پل میں بسا، ایک خواب نیک</p>
+        <p data-lang="en">Journey of love, from heart to heart<br>Every moment holds a noble dream.</p>
+      </div>
+      <div class="poem">
+        <h3 data-lang="en">Na'at-e-Rasool</h3>
+        <h3 class="urdu-text" data-lang="ur">نعت رسول</h3>
+        <p class="urdu" data-lang="ur">نورِ مصطفیٰ، رحمت کا دریا<br>ہر دل میں بسا، آپ کا سایہ</p>
+        <p data-lang="en">Light of Mustafa, river of mercy<br>Residing in every heart, your shadow.</p>
+      </div>
+    </section>
+    <section id="videos">
+      <h2 data-lang="en">Videos</h2>
+      <h2 class="urdu-text" data-lang="ur">ویڈیوز</h2>
+      <div class="content-item">
+        <h3 data-lang="en">Poetry Recitation</h3>
+        <h3 class="urdu-text" data-lang="ur">شاعری کی پیشکش</h3>
+        <p data-lang="en">Mushtaque Ahmad Nadvi at a literary festival. <a href="https://youtube.com">Watch</a></p>
+        <p class="urdu-text" data-lang="ur">مشتاق احمد ندوی ایک ادبی میلے میں۔ <a href="https://youtube.com">دیکھیں</a></p>
+      </div>
+    </section>
+    <section id="awards">
+      <h2 data-lang="en">Awards</h2>
+      <h2 class="urdu-text" data-lang="ur">ایوارڈز</h2>
+      <ul>
+        <li data-lang="en">Sahitya Akademi Award (Year)</li>
+        <li class="urdu-text" data-lang="ur">ساہتیہ اکیڈمی ایوارڈ (سال)</li>
+        <li data-lang="en">Ghalib Award (Year)</li>
+        <li class="urdu-text" data-lang="ur">غالب ایوارڈ (سال)</li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2 data-lang="en">Contact</h2>
+      <h2 class="urdu-text" data-lang="ur">رابطہ</h2>
+      <form id="contact-form" action="https://formspree.io/your-endpoint" method="POST">
+        <label for="name" data-lang="en">Name:</label>
+        <label for="name" class="urdu-text" data-lang="ur">نام:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email" data-lang="en">Email:</label>
+        <label for="email" class="urdu-text" data-lang="ur">ای میل:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message" data-lang="en">Message:</label>
+        <label for="message" class="urdu-text" data-lang="ur">پیغام:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit" data-lang="en">Submit</button>
+        <button type="submit" class="urdu-text" data-lang="ur">جمع کرائیں</button>
+      </form>
+      <p data-lang="en">Email: contact@mushtaqueahmadnadvi.com<br>Twitter: @MushtaqueNadvi</p>
+      <p class="urdu-text" data-lang="ur">ای میل: contact@mushtaqueahmadnadvi.com<br>ٹوئٹر: @MushtaqueNadvi</p>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

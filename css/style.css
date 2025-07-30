@@ -1,0 +1,280 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('../assets/images/background.png');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Toolbar */
+.toolbar {
+  background-color: teal;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .toolbar {
+  background-color: #1a3c3c;
+}
+
+.toolbar h1 {
+  font-size: 24px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu button {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#nav-menu {
+  list-style: none;
+  display: flex;
+}
+
+#nav-menu li {
+  margin-left: 20px;
+}
+
+#nav-menu a, #nav-menu span.urdu-text {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+#nav-menu a:hover, #nav-menu span.urdu-text:hover {
+  text-decoration: underline;
+}
+
+#theme-toggle, #lang-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Language Toggle */
+.urdu-text {
+  font-family: 'Noto Nastaliq Urdu', sans-serif;
+  font-size: 18px;
+  text-align: right;
+  direction: rtl;
+  display: none;
+}
+
+body.urdu .urdu-text {
+  display: block;
+}
+
+body.urdu [data-lang="en"] {
+  display: none;
+}
+
+/* Image Card */
+.image-card {
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid teal;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin: 80px auto 20px;
+}
+
+body.dark-mode .image-card {
+  background: #333;
+  border-color: #1a3c3c;
+}
+
+/* Image */
+.center-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Main Content */
+main {
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode main {
+  background: rgba(50, 50, 50, 0.9);
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: teal;
+  margin-bottom: 10px;
+}
+
+body.dark-mode h2 {
+  color: #1a3c3c;
+}
+
+.book, .content-item, .poem {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.book img {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input, form textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid teal;
+  border-radius: 4px;
+  background: white;
+  color: #333;
+}
+
+body.dark-mode form input, body.dark-mode form textarea {
+  background: #333;
+  color: #fff;
+  border-color: #1a3c3c;
+}
+
+form button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+body.dark-mode form button {
+  background-color: #1a3c3c;
+}
+
+form button:hover {
+  background-color: darkteal;
+}
+
+body.dark-mode form button:hover {
+  background-color: #145252;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  .toolbar h1 {
+    font-size: 20px;
+  }
+
+  .menu button {
+    display: block;
+  }
+
+  #nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: teal;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  body.dark-mode #nav-menu {
+    background: #1a3c3c;
+  }
+
+  #nav-menu.active {
+    display: flex;
+  }
+
+  #nav-menu li {
+    margin: 10px 0;
+  }
+
+  .image-card {
+    width: 80px;
+    height: 80px;
+    padding: 3px;
+    margin: 70px auto 10px;
+  }
+
+  .center-image {
+    width: 74px;
+    height: 74px;
+  }
+
+  .book, .content-item {
+    flex-direction: column;
+  }
+
+  .book img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@font-face {
+  font-family: 'Noto Nastaliq Urdu';
+  src: url('../assets/fonts/NotoNastaliqUrdu-Regular.ttf') format('truetype');
+}
