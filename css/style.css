@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-image: url('../assets/images/background.png');
+  background-image: url('/assets/images/background.png');
   background-size: cover;
   background-attachment: fixed;
   color: #333;
@@ -16,16 +16,16 @@ body {
 
 /* Dark Mode */
 body.dark-mode {
-  background-color: #222;
+  background-color: #1e203a;
   color: #fff;
+  background-image: none;
 }
 
 /* Toolbar */
 .toolbar {
-  background-color: teal;
+  background-color: rgb(136, 168, 103);
   color: white;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   position: fixed;
@@ -40,66 +40,181 @@ body.dark-mode .toolbar {
 }
 
 .toolbar h1 {
-  font-size: 24px;
+  font-size: 18px;
+  margin-right: auto;
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-}
-
-.menu button {
-  display: none;
+.menu-toggle {
   background: none;
   border: none;
   color: white;
   font-size: 18px;
   cursor: pointer;
+  display: none;
 }
 
 #nav-menu {
   list-style: none;
   display: flex;
+  align-items: center;
+  margin: 0 20px;
+  background: rgb(136, 168, 103);
+}
+
+body.dark-mode #nav-menu {
+  background: #1a3c3c;
 }
 
 #nav-menu li {
-  margin-left: 20px;
+  margin-left: 10px;
+  height: 32px; /* Fixed height for consistency */
 }
 
-#nav-menu a, #nav-menu span.urdu-text {
+#nav-menu a {
   color: white;
   text-decoration: none;
   font-size: 16px;
+  padding: 8px 10px; /* Adjusted padding */
+  border-radius: 4px;
+  line-height: 1.2; /* Fixed line-height */
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-#nav-menu a:hover, #nav-menu span.urdu-text:hover {
-  text-decoration: underline;
+#nav-menu a:hover {
+  background-color: #006666;
+  color: #fff;
 }
 
-#theme-toggle, #lang-toggle {
+body.dark-mode #nav-menu a:hover {
+  background-color: #145252;
+}
+
+#nav-menu a.active {
+  background-color: #006666;
+  color: #fff;
+  font-weight: bold;
+}
+
+body.dark-mode #nav-menu a.active {
+  background-color: #145252;
+}
+
+/* Toggles (Theme and Language) */
+.toggles {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lang-dropdown {
+  position: relative;
+  margin-right: 10px;
+}
+
+#lang-toggle {
   background: none;
   border: none;
   color: white;
   font-size: 16px;
   cursor: pointer;
-  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+#lang-toggle::after {
+  content: '▼';
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.lang-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgb(139,170,99);
+  list-style: none;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1001;
+}
+
+body.dark-mode .lang-menu {
+  background: #1a3c3c;
+}
+
+.lang-menu.active {
+  display: block;
+}
+
+.lang-menu li {
+  margin: 5px 0;
+}
+
+.lang-menu button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.lang-menu button:hover {
+  text-decoration: underline;
 }
 
 /* Language Toggle */
 .urdu-text {
   font-family: 'Noto Nastaliq Urdu', sans-serif;
-  font-size: 18px;
+  font-size: 22px; /* Site-wide Urdu text */
+  display: none;
   text-align: right;
   direction: rtl;
+}
+
+.hindi-text {
+  font-family: 'Noto Serif Devanagari', sans-serif;
+  font-size: 18px;
   display: none;
+  text-align: left;
+  direction: ltr;
 }
 
 body.urdu .urdu-text {
   display: block;
 }
 
-body.urdu [data-lang="en"] {
+body.hindi .hindi-text {
+  display: block;
+}
+
+body.urdu [data-lang="en"], body.urdu [data-lang="hi"],
+body.hindi [data-lang="en"], body.hindi [data-lang="ur"] {
   display: none;
+}
+
+/* Specific Urdu text size for #about section */
+#about .urdu-text {
+  font-size: 24px; /* Larger for heading (تعارف) */
+}
+
+#about .bio.urdu-text {
+  font-size: 24px; /* Larger for biography content */
 }
 
 /* Image Card */
@@ -113,9 +228,9 @@ body.urdu [data-lang="en"] {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  width: 100px;
-  height: 100px;
-  margin: 80px auto 20px;
+  width: 130px;
+  height: 130px;
+  margin: 60px auto 10px;
 }
 
 body.dark-mode .image-card {
@@ -125,58 +240,254 @@ body.dark-mode .image-card {
 
 /* Image */
 .center-image {
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 /* Main Content */
 main {
-  background: rgba(255, 255, 255, 0.9);
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-body.dark-mode main {
-  background: rgba(50, 50, 50, 0.9);
 }
 
 section {
-  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode section {
+  background: rgba(50, 50, 50, 0.9);
+}
+
+#about h2, #books h2 {
+  text-align: center;
 }
 
 h2 {
   color: teal;
   margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 body.dark-mode h2 {
   color: #1a3c3c;
 }
 
-.book, .content-item, .poem {
+/* Books Section */
+.published-books, .unpublished-books {
+  margin-top: 20px;
+}
+
+.published-books h3, .unpublished-books h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: teal;
+}
+
+body.dark-mode .published-books h3, body.dark-mode .unpublished-books h3 {
+  color: #1a3c3c;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.book {
   display: flex;
-  margin-bottom: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+body.urdu .book {
+  flex-direction: row-reverse;
 }
 
 .book img {
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
+  width: 150px;
+  height: 250px;
+  object-fit: cover;
+  margin: 0 10px 0 0;
+}
+
+body.urdu .book img {
+  margin: 0 0 0 10px;
+}
+
+.book-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+body.urdu .book-content {
+  align-items: flex-end;
+}
+
+.book h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.book-info {
+  max-height: 100px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  display: block;
+}
+
+body.urdu .book-info {
+  text-align: right;
+  direction: rtl;
+}
+
+body.hindi .book-info {
+  text-align: left;
+  direction: ltr;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+body.urdu .book-details {
+  align-items: flex-end;
+}
+
+.buy-button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: teal;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .buy-button {
+  background-color: #1a3c3c;
+}
+
+.buy-button:hover {
+  background-color: #006666;
+}
+
+body.dark-mode .buy-button:hover {
+  background-color: #145252;
+}
+
+.unpublished-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+body.urdu .unpublished-list {
+  padding-right: 20px;
+  padding-left: 0;
+  list-style-position: outside;
+}
+
+body.hindi .unpublished-list {
+  padding-left: 20px;
+  padding-right: 0;
+  list-style-position: outside;
+}
+
+.unpublished-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Bio and Contact Info (Wikipedia-style) */
+.bio, .contact-info {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.bio p, .contact-info p {
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.bio strong, .contact-info strong {
+  font-weight: bold;
+}
+
+.bio ul, .contact-info ul {
+  margin-top: 10px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.bio ul ul, .contact-info ul ul {
+  padding-left: 30px;
+  list-style-type: circle;
+}
+
+.bio li, .contact-info li {
+  margin-bottom: 8px;
+}
+
+body.urdu .bio, body.urdu .contact-info {
+  text-align: right;
+  direction: rtl;
+}
+
+body.hindi .bio, body.hindi .contact-info {
+  text-align: left;
+  direction: ltr;
+}
+
+body.urdu .bio ul, body.urdu .contact-info ul {
+  padding-right: 20px;
+  padding-left: 0;
+  list-style-position: outside;
+}
+
+body.hindi .bio ul, body.hindi .contact-info ul {
+  padding-left: 20px;
+  padding-right: 0;
+  list-style-position: outside;
+}
+
+body.urdu .bio ul ul, body.urdu .contact-info ul ul {
+  padding-right: 30px;
+  padding-left: 0;
+}
+
+body.hindi .bio ul ul, body.hindi .contact-info ul ul {
+  padding-left: 30px;
+  padding-right: 0;
 }
 
 /* Contact Form */
 form {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 form label {
   margin-top: 10px;
+  font-size: 16px;
 }
 
 form input, form textarea {
@@ -186,12 +497,28 @@ form input, form textarea {
   border-radius: 4px;
   background: white;
   color: #333;
+  font-size: 16px;
 }
 
 body.dark-mode form input, body.dark-mode form textarea {
   background: #333;
   color: #fff;
   border-color: #1a3c3c;
+}
+
+body.urdu form input, body.urdu form textarea {
+  text-align: right;
+  direction: rtl;
+}
+
+body.hindi form input, body.hindi form textarea {
+  text-align: left;
+  direction: ltr;
+}
+
+form textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 form button {
@@ -202,6 +529,7 @@ form button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 body.dark-mode form button {
@@ -209,25 +537,45 @@ body.dark-mode form button {
 }
 
 form button:hover {
-  background-color: darkteal;
+  background-color: #006666;
 }
 
 body.dark-mode form button:hover {
   background-color: #145252;
 }
 
+form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* Responsive Design */
 @media (max-width: 600px) {
   .toolbar {
-    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 10px;
   }
 
   .toolbar h1 {
-    font-size: 20px;
+    font-size: 16px;
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 10px;
   }
 
-  .menu button {
+  .menu-toggle {
     display: block;
+  }
+
+  .toggles {
+    display: flex;
+    align-items: center;
+  }
+
+  .theme-toggle {
+    margin-left: 10px;
   }
 
   #nav-menu {
@@ -235,9 +583,10 @@ body.dark-mode form button:hover {
     position: absolute;
     top: 60px;
     right: 20px;
-    background: teal;
+    background: rgb(139,170,99);
     flex-direction: column;
     padding: 10px;
+    width: 200px;
   }
 
   body.dark-mode #nav-menu {
@@ -249,32 +598,142 @@ body.dark-mode form button:hover {
   }
 
   #nav-menu li {
-    margin: 10px 0;
+    margin: 5px 0;
+    height: auto; /* Allow natural height in mobile */
+  }
+
+  #nav-menu a {
+    display: block;
+    padding: 8px 10px;
+  }
+
+  .lang-dropdown {
+    margin-right: 10px;
+  }
+
+  .lang-menu {
+    width: 100px;
+    right: 0;
   }
 
   .image-card {
-    width: 80px;
-    height: 80px;
+    width: 130px;
+    height: 130px;
     padding: 3px;
     margin: 70px auto 10px;
   }
 
   .center-image {
-    width: 74px;
-    height: 74px;
+    width: 120px;
+    height: 120px;
   }
 
-  .book, .content-item {
-    flex-direction: column;
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book {
+    flex-direction: row-reverse;
+    align-items: flex-start;
   }
 
   .book img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 150px;
+    margin: 0 0 0 10px;
+  }
+
+  .book-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  body.urdu .book-content {
+    align-items: flex-end;
+  }
+
+  .book-info {
+    max-height: 100px;
+    overflow-y: auto;
+    padding: 5px;
+    width: calc(100% - 110px); /* Adjust for image width + margin */
+    text-align: left;
+    font-size: 14px;
+    display: block;
+  }
+
+  body.urdu .book-info {
+    text-align: right;
+    direction: rtl;
+  }
+
+  body.hindi .book-info {
+    text-align: left;
+    direction: ltr;
+  }
+
+  .book-details {
+    align-items: center;
+    text-align: center;
+  }
+
+  body.urdu .book-details {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio, .contact-info {
+    font-size: 14px;
+  }
+
+  #about .bio.urdu-text {
+    font-size: 20px; /* Slightly smaller for mobile readability */
+  }
+
+  .bio ul, .contact-info ul {
+    padding-left: 15px;
+  }
+
+  .bio ul ul, .contact-info ul ul {
+    padding-left: 25px;
+  }
+
+  body.urdu .bio ul, body.urdu .contact-info ul {
+    padding-right: 15px;
+    padding-left: 0;
+  }
+
+  body.hindi .bio ul, body.hindi .contact-info ul {
+    padding-left: 15px;
+    padding-right: 0;
+  }
+
+  body.urdu .bio ul ul, body.urdu .contact-info ul ul {
+    padding-right: 25px;
+    padding-left: 0;
+  }
+
+  body.hindi .bio ul ul, body.hindi .contact-info ul ul {
+    padding-left: 25px;
+    padding-right: 0;
+  }
+
+  section {
+    padding: 15px;
+    margin-bottom: 15px;
   }
 }
 
 @font-face {
   font-family: 'Noto Nastaliq Urdu';
-  src: url('../assets/fonts/NotoNastaliqUrdu-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/Jameel\ Noori\ Nastaleeq.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Serif Devanagari';
+  src: url('assets/fonts/NotoSerifDevanagari-Regular.ttf') format('truetype');
+  font-display: swap;
 }

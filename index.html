@@ -5,143 +5,298 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Official website of Mushtaque Ahmad Nadvi, Urdu poet and writer">
   <meta name="keywords" content="Mushtaque Ahmad Nadvi, Urdu poetry, Hindi literature">
-  <title>Mushtaque Ahmad Nadvi</title>
+  <title>Mushtaque Ahmad Nadvi - Urdu Poet and Scholar</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="/assets/images/center_image.jpeg">
 </head>
 <body>
   <!-- Toolbar -->
   <header>
     <nav class="toolbar">
-      <h1>مشتاق احمد ندوی</h1>
-      <div class="menu">
-        <button onclick="toggleMenu()">☰ Menu</button>
-        <ul id="nav-menu">
-          <li><a href="#introduction" data-lang="en">Introduction</a><span class="urdu-text" data-lang="ur">تعارف</span></li>
-          <li><a href="#biography" data-lang="en">Biography</a><span class="urdu-text" data-lang="ur">سوانح حیات</span></li>
-          <li><a href="#published" data-lang="en">Published Books</a><span class="urdu-text" data-lang="ur">شائع شدہ کتابیں</span></li>
-          <li><a href="#unpublished" data-lang="en">Unpublished Books</a><span class="urdu-text" data-lang="ur">غیر شائع شدہ کتابیں</span></li>
-          <li><a href="#essays" data-lang="en">Essays</a><span class="urdu-text" data-lang="ur">مضامین</span></li>
-          <li><a href="#poems" data-lang="en">Poems</a><span class="urdu-text" data-lang="ur">نظمیں</span></li>
-          <li><a href="#videos" data-lang="en">Videos</a><span class="urdu-text" data-lang="ur">ویڈیوز</span></li>
-          <li><a href="#awards" data-lang="en">Awards</a><span class="urdu-text" data-lang="ur">ایوارڈز</span></li>
-          <li><a href="#contact" data-lang="en">Contact</a><span class="urdu-text" data-lang="ur">رابطہ</span></li>
-          <li><button id="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button></li>
-          <li><button id="lang-toggle" onclick="toggleLanguage()">🇵🇰 Urdu</button></li>
-        </ul>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-expanded="false" aria-controls="nav-menu">☰ Menu</button>
+      <h1>
+        <span data-lang="en">Mushtaque Ahmad Nadvi</span>
+        <span class="urdu-text" data-lang="ur">مشتاق احمد ندوی</span>
+        <span class="hindi-text" data-lang="hi">मुश्ताक अहमद नदवी</span>
+      </h1>
+      <ul id="nav-menu">
+        <li>
+          <a href="#about">
+            <span data-lang="en">Introduction</span>
+            <span class="urdu-text" data-lang="ur">تعارف</span>
+            <span class="hindi-text" data-lang="hi">परिचय</span>
+          </a>
+        </li>
+        <li>
+          <a href="#books">
+            <span data-lang="en">Books</span>
+            <span class="urdu-text" data-lang="ur">کتابیں</span>
+            <span class="hindi-text" data-lang="hi">पुस्तकें</span>
+          </a>
+        </li>
+        <li>
+          <a href="#videos">
+            <span data-lang="en">Videos</span>
+            <span class="urdu-text" data-lang="ur">ویڈیوز</span>
+            <span class="hindi-text" data-lang="hi">वीडियो</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <span data-lang="en">Contact</span>
+            <span class="urdu-text" data-lang="ur">رابطہ</span>
+            <span class="hindi-text" data-lang="hi">संपर्क</span>
+          </a>
+        </li>
+      </ul>
+      <div class="toggles">
+        <div class="lang-dropdown">
+          <button id="lang-toggle" onclick="toggleLangDropdown()" aria-haspopup="true" aria-expanded="false">Lang</button>
+          <ul id="lang-menu" class="lang-menu">
+            <li><button onclick="setLanguage('en')">Eng</button></li>
+            <li><button onclick="setLanguage('ur')">Urd</button></li>
+            <li><button onclick="setLanguage('hi')">Hin</button></li>
+          </ul>
+        </div>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
       </div>
     </nav>
   </header>
 
   <!-- Image in Center -->
   <div class="image-card">
-    <img src="/assets/images/center_image.jpeg" alt="Mushtaque Ahmad Nadvi" class="center-image">
+    <img src="assets/images/center_image.jpeg" alt="Portrait of Mushtaque Ahmad Nadvi" class="center-image" loading="lazy">
   </div>
 
   <!-- Main Content -->
   <main>
-    <section id="introduction">
+    <section id="about">
       <h2 data-lang="en">Introduction</h2>
       <h2 class="urdu-text" data-lang="ur">تعارف</h2>
-      <p data-lang="en">Welcome to the official website of Mushtaque Ahmad Nadvi, a distinguished Urdu poet and scholar. Explore his literary contributions.</p>
-      <p class="urdu-text" data-lang="ur">مشتاق احمد ندوی کی سرکاری ویب سائٹ پر خوش آمدید، ایک ممتاز اردو شاعر اور عالم۔ ان کی ادبی شراکت کو دریافت کریں۔</p>
+      <h2 class="hindi-text" data-lang="hi">परिचय</h2>
+      <div class="bio" data-lang="en">
+        <p><strong>Mushtaque Ahmad Nadvi</strong> (born September 12, 1981) is an Indian Urdu poet, writer, and scholar known for his contributions to Urdu and Hindi literature. Hailing from Harishpur, Shivnagar, Dighri, Katihar, Bihar, he has made significant contributions to Islamic scholarship and literary works.</p>
+        <ul>
+          <li><strong>Parents</strong>: Mohammad Noor ul Islam (father), Bibi Sona Bahan (mother)</li>
+          <li><strong>Spouse</strong>: Ayesha Khatoon</li>
+          <li><strong>Children</strong>: Ramla Mushtaque, Shaker Mushtaque, Yasir Mushtaque, Sharique Mushtaque</li>
+          <li><strong>Education</strong>:
+            <ul>
+              <li>Alimiyat: Darul Uloom Nadwatul Ulama, Lucknow</li>
+              <li>Fazilat: Jamia Islamia Faiz-e-Aam, Maunath Bhanjan, Uttar Pradesh</li>
+              <li>M.A. Urdu: Maulana Azad National Urdu University, Hyderabad</li>
+              <li>B.Ed.</li>
+            </ul>
+          </li>
+          <li><strong>Occupation</strong>: Teacher at Higher Secondary School, Hafalganj, Katihar, Bihar</li>
+        </ul>
+      </div>
+      <div class="bio urdu-text" data-lang="ur">
+        <p><strong>مشتاق احمد ندوی</strong> (پیدائش: 12 ستمبر 1981) ایک ہندوستانی اردو شاعر، مصنف، اور عالم ہیں جو اردو اور ہندی ادب میں اپنی شراکت کے لیے مشہور ہیں۔ وہ ہریش پور، شیونگر، دیگھری، کٹیہار، بہار سے تعلق رکھتے ہیں اور اسلامی اسکالرشپ اور ادبی کاموں میں نمایاں کردار ادا کر چکے ہیں۔</p>
+        <ul>
+          <li><strong>والدین</strong>: محمد نور الاسلام (والد)، بی بی سونا بہان (والدہ)</li>
+          <li><strong>شریک حیات</strong>: عائشہ خاتون</li>
+          <li><strong>اولاد</strong>: رمله مشتاق، شاکر مشتاق، یاسر مشتاق، شارق مشتاق</li>
+          <li><strong>تعلیم</strong>:
+            <ul>
+              <li>عالمیت: دار العلوم ندوۃ العلماء، لکھنو</li>
+              <li>فضیلت: جامعہ اسلامیہ فیض عام، مئو ناتھ بھنجن، یوپی</li>
+              <li>ایم اے اردو: مولانا آزاد نیشنل اردو یونیورسٹی، حیدرآباد</li>
+              <li>بی ایڈ</li>
+            </ul>
+          </li>
+          <li><strong>ملازمت</strong>: ہائر سیکنڈری اسکول، ہفلہ گنج، کٹیہار، بہار میں استاد</li>
+        </ul>
+      </div>
+      <div class="bio hindi-text" data-lang="hi">
+        <p><strong>मुश्ताक अहमद नदवी</strong> (जन्म: 12 सितंबर 1981) एक भारतीय उर्दू कवि, लेखक और विद्वान हैं, जो उर्दू और हिंदी साहित्य में अपने योगदान के लिए जाने जाते हैं। वे हरिशपुर, शिवनगर, दिघरी, कटिहार, बिहार से हैं और उन्होंने इस्लामी विद्वता और साहित्यिक कार्यों में महत्वपूर्ण योगदान दिया है।</p>
+        <ul>
+          <li><strong>माता-पिता</strong>: मोहम्मद नूर उल इस्लाम (पिता), बीबी सोना बहन (माता)</li>
+          <li><strong>जीवनसाथी</strong>: आयशा खातून</li>
+          <li><strong>संतान</strong>: रमला मुश्ताक, शाकिर मुश्ताक, यासिर मुश्ताक, शारिक मुश्ताक</li>
+          <li><strong>शिक्षा</strong>:
+            <ul>
+              <li>आलिमियत: दारुल उलूम नदवतुल उलमा, लखनऊ</li>
+              <li>फ़ज़ीलत: जामिया इस्लामिया फैज़-ए-आम, मऊनाथ भंजन, उत्तर प्रदेश</li>
+              <li>एम.ए. उर्दू: मौलाना आज़ाद नेशनल उर्दू यूनिवर्सिटी, हैदराबाद</li>
+              <li>बी.एड.</li>
+            </ul>
+          </li>
+          <li><strong>व्यवसाय</strong>: हायर सेकेंडरी स्कूल, हफलगंज, कटिहार, बिहार में शिक्षक</li>
+        </ul>
+      </div>
     </section>
-    <section id="biography">
-      <h2 data-lang="en">Biography</h2>
-      <h2 class="urdu-text" data-lang="ur">سوانح حیات</h2>
-      <p data-lang="en">Mushtaque Ahmad Nadvi was born in [City, Year]. He earned a degree in Urdu literature from [University] and has been contributing to poetry and prose for many years.</p>
-      <p class="urdu-text" data-lang="ur">مشتاق احمد ندوی [شہر، سال] میں پیدا ہوئے۔ انہوں نے اردو ادب میں [یونیورسٹی] سے ڈگری حاصل کی اور کئی سالوں سے شاعری اور نثر میں خدمات انجام دی ہیں۔</p>
-    </section>
-    <section id="published">
-      <h2 data-lang="en">Published Books</h2>
-      <h2 class="urdu-text" data-lang="ur">شائع شدہ کتابیں</h2>
-      <div class="book">
-        <img src="https://via.placeholder.com/150" alt="Book Cover">
-        <div>
-          <h3 data-lang="en">Diwan-e-Nadvi</h3>
-          <h3 class="urdu-text" data-lang="ur">دیوان ندوی</h3>
-          <p data-lang="en">A collection of Urdu ghazals. <a href="https://example.com">Buy Now</a></p>
-          <p class="urdu-text" data-lang="ur">اردو غزلوں کا مجموعہ۔ <a href="https://example.com">ابھی خریدیں</a></p>
+    <section id="books">
+      <h2 data-lang="en">Books</h2>
+      <h2 class="urdu-text" data-lang="ur">کتابیں</h2>
+      <h2 class="hindi-text" data-lang="hi">पुस्तकें</h2>
+      <div class="published-books">
+        <h3 data-lang="en">Published Books</h3>
+        <h3 class="urdu-text" data-lang="ur">شائع شدہ کتابیں</h3>
+        <h3 class="hindi-text" data-lang="hi">प्रकाशित पुस्तकें</h3>
+        <div class="book-grid">
+          <div class="book">
+            <img src="assets/images/cover1.jpeg" alt="Duaen Jo Bariyab Hui Cover" loading="lazy">
+            <div class="book-content">
+              <div class="book-info">
+                <p data-lang="en">This book compiles heartfelt supplications accepted by divine will, offering spiritual guidance for readers seeking solace and connection through prayer in Urdu poetry.</p>
+                <p class="urdu-text" data-lang="ur">یہ کتاب الہی ارادے سے قبول شدہ دعاؤں کا مجموعہ ہے، جو قارئین کو روحانی رہنمائی اور اردو شاعری کے ذریعے سکون اور رابطہ فراہم کرتی ہے۔</p>
+                <p class="hindi-text" data-lang="hi">यह पुस्तक ईश्वरीय इच्छा से स्वीकार की गई प्रार्थनाओं का संग्रह है, जो पाठकों को उर्दू कविता के माध्यम से आध्यात्मिक मार्गदर्शन और शांति प्रदान करती है।</p>
+              </div>
+              <div class="book-details">
+                <h4 data-lang="en">Duaen Jo Bariyab Hui</h4>
+                <h4 class="urdu-text" data-lang="ur">دعائیں جو باریاب ہوئیں</h4>
+                <h4 class="hindi-text" data-lang="hi">दुआएँ जो बारियाब हुईं</h4>
+                <a href="https://your-purchase-link.com" class="buy-button">
+                  <span data-lang="en">Buy Now</span>
+                  <span class="urdu-text" data-lang="ur">ابھی خریدیں</span>
+                  <span class="hindi-text" data-lang="hi">अभी खरीदें</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="book">
+            <img src="assets/images/cover2.jpeg" alt="Maulana Abu Bakr Haruni Cover" loading="lazy">
+            <div class="book-content">
+              <div class="book-info">
+                <p data-lang="en">A detailed biography exploring the life, teachings, and contributions of Maulana Abu Bakr Haruni, a revered Islamic scholar, written in eloquent Urdu prose.</p>
+                <p class="urdu-text" data-lang="ur">مولانا ابوبکر ہارونی کی زندگی، تعلیمات اور شراکت کی تفصیلی سوانح عمری، جو فصیح اردو نثر میں لکھی گئی ہے۔</p>
+                <p class="hindi-text" data-lang="hi">मौलाना अबू बकर हारूनी के जीवन, शिक्षाओं और योगदान की विस्तृत जीवनी, जो सुवक्ता उर्दू गद्य में लिखी गई है।</p>
+              </div>
+              <div class="book-details">
+                <h4 data-lang="en">Maulana Abu Bakr Haruni</h4>
+                <h4 class="urdu-text" data-lang="ur">مولانا ابوبکر ہارونی</h4>
+                <h4 class="hindi-text" data-lang="hi">मौलाना अबूबकर हारूनी</h4>
+                <a href="https://your-purchase-link.com" class="buy-button">
+                  <span data-lang="en">Buy Now</span>
+                  <span class="urdu-text" data-lang="ur">ابھی خریدیں</span>
+                  <span class="hindi-text" data-lang="hi">अभी खरीदें</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="book">
+            <img src="assets/images/cover3.jpeg" alt="Nishan-e-Karwan Cover" loading="lazy">
+            <div class="book-content">
+              <div class="book-info">
+                <p data-lang="en">A poetic anthology capturing the essence of Urdu literature, weaving themes of love, culture, and spirituality through evocative verses and imagery.</p>
+                <p class="urdu-text" data-lang="ur">اردو ادب کی روح کو سمیٹنے والی شاعری کی انتھالوجی، جو محبت، ثقافت اور روحانیت کے موضوعات کو پرکشش اشعار سے پیش کرتی ہے۔</p>
+                <p class="hindi-text" data-lang="hi">उर्दू साहित्य का सार समेटने वाली काव्य संकलन, जो प्रेम, संस्कृति और आध्यात्मिकता के विषयों को आकर्षक छंदों में प्रस्तुत करता है।</p>
+              </div>
+              <div class="book-details">
+                <h4 data-lang="en">Nishan-e-Karwan</h4>
+                <h4 class="urdu-text" data-lang="ur">نشان کاروان</h4>
+                <h4 class="hindi-text" data-lang="hi">निशान कारवाँ</h4>
+                <a href="https://your-purchase-link.com" class="buy-button">
+                  <span data-lang="en">Buy Now</span>
+                  <span class="urdu-text" data-lang="ur">ابھی خریدیں</span>
+                  <span class="hindi-text" data-lang="hi">अभी खरीदें</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="book">
+            <img src="assets/images/cover4.jpg" alt="Bhartiya Svatantrata Itihas ke Do Shurveer Cover" loading="lazy">
+            <div class="book-content">
+              <div class="book-info">
+                <p data-lang="en">Chronicles the bravery of two unsung heroes of India's independence struggle, highlighting their sacrifices and contributions in Urdu narrative.</p>
+                <p class="urdu-text" data-lang="ur">بھارت کی آزادی کی جدوجہد کے دو گمنام ہیروز کی بہادری کی داستان، ان کی قربانیوں اور شراکت کو اردو بیانیہ میں اجاگر کرتی ہے۔</p>
+                <p class="hindi-text" data-lang="hi">भारत की स्वतंत्रता संग्राम के दो गुमनाम नायकों की वीरता की कहानी, उनकी बलिदानों और योगदान को उर्दू कथन में उजागर करती है।</p>
+              </div>
+              <div class="book-details">
+                <h4 data-lang="en">Bhartiya Svatantrata Itihas ke Do Shurveer</h4>
+                <h4 class="urdu-text" data-lang="ur">بھارتیہ سوتنترتا اتہاس کے دو شورویر</h4>
+                <h4 class="hindi-text" data-lang="hi">भारतीय स्वतंत्रता इतिहास के दो शूरवीर</h4>
+                <a href="https://your-purchase-link.com" class="buy-button">
+                  <span data-lang="en">Buy Now</span>
+                  <span class="urdu-text" data-lang="ur">ابھی خریدیں</span>
+                  <span class="hindi-text" data-lang="hi">अभी खरीदें</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-    <section id="unpublished">
-      <h2 data-lang="en">Unpublished Books</h2>
-      <h2 class="urdu-text" data-lang="ur">غیر شائع شدہ کتابیں</h2>
-      <div class="book">
-        <h3 data-lang="en">Noor-e-Qalam (In Progress)</h3>
-        <h3 class="urdu-text" data-lang="ur">نور قلم (زیر ترقی)</h3>
-        <p data-lang="en">An upcoming collection of essays.</p>
-        <p class="urdu-text" data-lang="ur">مضامین کا ایک آئندہ مجموعہ۔</p>
-      </div>
-    </section>
-    <section id="essays">
-      <h2 data-lang="en">Essays</h2>
-      <h2 class="urdu-text" data-lang="ur">مضامین</h2>
-      <div class="content-item">
-        <h3 data-lang="en">The Evolution of Urdu Poetry</h3>
-        <h3 class="urdu-text" data-lang="ur">اردو شاعری کی ترقی</h3>
-        <p data-lang="en">An essay on Urdu poetry’s history. <a href="https://example.com">Read</a></p>
-        <p class="urdu-text" data-lang="ur">اردو شاعری کی تاریخ پر ایک مضمون۔ <a href="https://example.com">پڑھیں</a></p>
-      </div>
-    </section>
-    <section id="poems">
-      <h2 data-lang="en">Poems</h2>
-      <h2 class="urdu-text" data-lang="ur">نظمیں</h2>
-      <div class="poem">
-        <h3 data-lang="en">Journey of Love</h3>
-        <h3 class="urdu-text" data-lang="ur">محبت کا سفر</h3>
-        <p class="urdu" data-lang="ur">محبت کا سفر، دل سے دل تک<br>ہر پل میں بسا، ایک خواب نیک</p>
-        <p data-lang="en">Journey of love, from heart to heart<br>Every moment holds a noble dream.</p>
-      </div>
-      <div class="poem">
-        <h3 data-lang="en">Na'at-e-Rasool</h3>
-        <h3 class="urdu-text" data-lang="ur">نعت رسول</h3>
-        <p class="urdu" data-lang="ur">نورِ مصطفیٰ، رحمت کا دریا<br>ہر دل میں بسا، آپ کا سایہ</p>
-        <p data-lang="en">Light of Mustafa, river of mercy<br>Residing in every heart, your shadow.</p>
+      <div class="unpublished-books">
+        <h3 data-lang="en">Unpublished Books</h3>
+        <h3 class="urdu-text" data-lang="ur">غیر شائع شدہ کتابیں</h3>
+        <h3 class="hindi-text" data-lang="hi">अप्रकाशित पुस्तकें</h3>
+        <ul class="unpublished-list">
+          <li>
+            <span data-lang="en">Arbaeen Nawawi - Hindi Translation and Brief Benefits</span>
+            <span class="urdu-text" data-lang="ur">اربعین نووی - ترجمہ و مختصر فوائد بزبان ہندی</span>
+            <span class="hindi-text" data-lang="hi">अरबाईन नववी - हिंदी अनुवाद और संक्षिप्त लाभ</span>
+          </li>
+          <li>
+            <span data-lang="en">Mehr-e-Nubuwwat - Hindi Translation</span>
+            <span class="urdu-text" data-lang="ur">مہرِ نبوت - ہندی ترجمہ</span>
+            <span class="hindi-text" data-lang="hi">मेहर-ए-नुबुव्वत - हिंदी अनुवाद</span>
+          </li>
+        </ul>
       </div>
     </section>
     <section id="videos">
       <h2 data-lang="en">Videos</h2>
       <h2 class="urdu-text" data-lang="ur">ویڈیوز</h2>
+      <h2 class="hindi-text" data-lang="hi">वीडियो</h2>
       <div class="content-item">
         <h3 data-lang="en">Poetry Recitation</h3>
         <h3 class="urdu-text" data-lang="ur">شاعری کی پیشکش</h3>
-        <p data-lang="en">Mushtaque Ahmad Nadvi at a literary festival. <a href="https://youtube.com">Watch</a></p>
-        <p class="urdu-text" data-lang="ur">مشتاق احمد ندوی ایک ادبی میلے میں۔ <a href="https://youtube.com">دیکھیں</a></p>
+        <h3 class="hindi-text" data-lang="hi">कविता पाठ</h3>
+        <p data-lang="en">Mushtaque Ahmad Nadvi at a literary festival. <a href="https://your-youtube-link.com">Watch</a></p>
+        <p class="urdu-text" data-lang="ur">مشتاق احمد ندوی ایک ادبی میلے میں۔ <a href="https://your-youtube-link.com">دیکھیں</a></p>
+        <p class="hindi-text" data-lang="hi">मुश्ताक अहमद नदवी एक साहित्यिक उत्सव में। <a href="https://your-youtube-link.com">देखें</a></p>
       </div>
-    </section>
-    <section id="awards">
-      <h2 data-lang="en">Awards</h2>
-      <h2 class="urdu-text" data-lang="ur">ایوارڈز</h2>
-      <ul>
-        <li data-lang="en">Sahitya Akademi Award (Year)</li>
-        <li class="urdu-text" data-lang="ur">ساہتیہ اکیڈمی ایوارڈ (سال)</li>
-        <li data-lang="en">Ghalib Award (Year)</li>
-        <li class="urdu-text" data-lang="ur">غالب ایوارڈ (سال)</li>
-      </ul>
     </section>
     <section id="contact">
       <h2 data-lang="en">Contact</h2>
       <h2 class="urdu-text" data-lang="ur">رابطہ</h2>
-      <form id="contact-form" action="https://formspree.io/your-endpoint" method="POST">
+      <h2 class="hindi-text" data-lang="hi">संपर्क</h2>
+      <div class="contact-info" data-lang="en">
+        <p><strong>Contact Information</strong></p>
+        <ul>
+          <li><strong>Email</strong>: <a href="mailto:mushtaqnadwee@gmail.com">mushtaqnadwee@gmail.com</a></li>
+          <li><strong>Mobile</strong>: +91 9199450776</li>
+          <li><strong>Address</strong>: Harishpur, Shivnagar, Dighri, Katihar, Bihar, India 854106</li>
+          <li><strong>Twitter</strong>: <a href="https://twitter.com/MushtaqueNadvi" target="_blank">@MushtaqueNadvi</a></li>
+        </ul>
+      </div>
+      <div class="contact-info urdu-text" data-lang="ur">
+        <p><strong>رابطے کی معلومات</strong></p>
+        <ul>
+          <li><strong>ای میل</strong>: <a href="mailto:mushtaqnadwee@gmail.com">mushtaqnadwee@gmail.com</a></li>
+          <li><strong>موبائل</strong>: +91 9199450776</li>
+          <li><strong>پتہ</strong>: ہریش پور، شیونگر، دیگھری، کٹیہار، بہار، انڈیا 854106</li>
+          <li><strong>ٹوئٹر</strong>: <a href="https://twitter.com/MushtaqueNadvi" target="_blank">@MushtaqueNadvi</a></li>
+        </ul>
+      </div>
+      <div class="contact-info hindi-text" data-lang="hi">
+        <p><strong>संपर्क जानकारी</strong></p>
+        <ul>
+          <li><strong>ईमेल</strong>: <a href="mailto:mushtaqnadwee@gmail.com">mushtaqnadwee@gmail.com</a></li>
+          <li><strong>मोबाइल</strong>: +91 9199450776</li>
+          <li><strong>पता</strong>: हरिशपुर, शिवनगर, दिघरी, कटिहार, बिहार, भारत 854106</li>
+          <li><strong>ट्विटर</strong>: <a href="https://twitter.com/MushtaqueNadvi" target="_blank">@MushtaqueNadvi</a></li>
+        </ul>
+      </div>
+      <form id="contact-form" action="https://formspree.io/your-actual-endpoint" method="POST">
         <label for="name" data-lang="en">Name:</label>
         <label for="name" class="urdu-text" data-lang="ur">نام:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="name" class="hindi-text" data-lang="hi">नाम:</label>
+        <input type="text" id="name" name="name" required aria-required="true">
         <label for="email" data-lang="en">Email:</label>
         <label for="email" class="urdu-text" data-lang="ur">ای میل:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email" class="hindi-text" data-lang="hi">ईमेल:</label>
+        <input type="email" id="email" name="email" required aria-required="true">
         <label for="message" data-lang="en">Message:</label>
         <label for="message" class="urdu-text" data-lang="ur">پیغام:</label>
-        <textarea id="message" name="message" required></textarea>
+        <label for="message" class="hindi-text" data-lang="hi">संदेश:</label>
+        <textarea id="message" name="message" required aria-required="true"></textarea>
         <button type="submit" data-lang="en">Submit</button>
         <button type="submit" class="urdu-text" data-lang="ur">جمع کرائیں</button>
+        <button type="submit" class="hindi-text" data-lang="hi">जमा करें</button>
       </form>
-      <p data-lang="en">Email: contact@mushtaqueahmadnadvi.com<br>Twitter: @MushtaqueNadvi</p>
-      <p class="urdu-text" data-lang="ur">ای میل: contact@mushtaqueahmadnadvi.com<br>ٹوئٹر: @MushtaqueNadvi</p>
     </section>
   </main>
-
   <script src="js/script.js"></script>
 </body>
 </html>
